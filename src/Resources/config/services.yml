@@ -1,0 +1,28 @@
+imports:
+    - { resource: actions.yml }
+
+services:
+    norsys_security.event_listener.coming_soon:
+        class: Norsys\SecurityBundle\EventListener\ComingSoonListener
+        arguments:
+            - '@router'
+            - '%norsys_security.coming_soon.enabled%'
+            - '%norsys_security.coming_soon.allowed_ips%'
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest, priority: 254 }
+
+    norsys_security.event_listener.https_redirect:
+        class: Norsys\SecurityBundle\EventListener\HttpsRedirectListener
+        arguments:
+            - '%norsys_security.https_redirect.enabled%'
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest, priority: 255 }
+
+    norsys_security.event_listener.proxy:
+        class: Norsys\SecurityBundle\EventListener\ProxyListener
+        arguments:
+            - '%norsys_security.proxy.enabled%'
+            - '%norsys_security.proxy.env_variable_name%'
+            - '%norsys_security.proxy.env_variable_separator%'
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest, priority: 256 }
