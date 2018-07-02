@@ -1,0 +1,36 @@
+{
+    "name": "norsys/security-bundle",
+    "description": "Bundle that provides security tools",
+    "license": "proprietary",
+    "type": "symfony-bundle",
+    "authors": [
+        {
+            "name": "Cedric Vanet",
+            "email": "cvanet@norsys.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Norsys\\SecurityBundle\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Norsys\\SecurityBundle\\Tests\\Units\\": "tests/units/src"
+        }
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^2.6",
+        "atoum/atoum": "~3.0",
+        "atoum/stubs": "~2.5",
+        "atoum/bdd-extension": "~2.1",
+        "norsys/php-coding-standard": "^1.0",
+        "norsys/rothenberg": "dev-master"
+    },
+    "require": {
+        "php": ">=7.0.0",
+        "symfony/framework-bundle": "^2.8|^3.0",
+        "symfony/expression-language": "^2.8|^3.0",
+        "symfony/templating": "^2.8|^3.0"
+    }
+}

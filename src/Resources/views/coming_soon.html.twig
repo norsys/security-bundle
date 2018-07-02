@@ -1,0 +1,26 @@
+{% trans_default_domain "security" %}
+
+{% set route = app.request.attributes.get('_route') %}
+
+<html>
+
+    <head>
+        {% block titletag %}
+            {{ seo_render_title(route) }}
+        {% endblock titletag %}
+
+        {% block metatags %}
+            {{ seo_render_metas(route) }}
+        {% endblock metatags %}
+
+        {% block linktags %}
+            {{ seo_render_links(route) }}
+        {% endblock linktags %}
+    </head>
+
+    <body>
+        <h1>{{ 'coming_soon.title'|trans|capitalize }}</h1>
+        <p>{{ 'coming_soon.content'|trans|capitalize }}</p>
+    </body>
+
+</html>

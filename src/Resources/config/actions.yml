@@ -1,0 +1,7 @@
+services:
+    norsys_security.action.coming_soon:
+        class: Norsys\SecurityBundle\Action\ComingSoon
+        arguments:
+            - '@templating.engine.twig'
+            - '%norsys_security.coming_soon.enabled%'
+            - '%norsys_security.coming_soon.template%'

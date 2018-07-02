@@ -1,0 +1,4 @@
+norsys_security_coming_soon:
+    path: /coming-soon
+    defaults:
+        _controller: norsys_security.action.coming_soon
