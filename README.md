@@ -1,5 +1,11 @@
 # Norsys security bundle
 
+[![Package version](https://img.shields.io/packagist/v/norsys/security-bundle.svg?style=flat-square)](https://packagist.org/packages/norsys/security-bundle)
+[![Total Downloads](https://img.shields.io/packagist/dt/norsys/security-bundle.svg?style=flat-square)](https://packagist.org/packages/norsys/security-bundle)
+[![Build Status](https://img.shields.io/travis/M6Web/ApiExceptionBundle/master.svg?style=flat-square)](https://travis-ci.org/M6Web/ApiExceptionBundle)
+[![Scrutinizer Coverage](https://img.shields.io/scrutinizer/coverage/g/norsys/security-bundle.svg?style=flat-square)](https://scrutinizer-ci.com/g/norsys/security-bundle/?branch=master)
+[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/norsys/security-bundle.svg?style=flat-square)](https://scrutinizer-ci.com/g/norsys/security-bundle/?branch=master)
+
 Bundle that provides security tools.
 
 Installation
