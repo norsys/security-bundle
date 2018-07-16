@@ -7,8 +7,16 @@ use Norsys\SecurityBundle\Tests\Units\Test;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use \mock\Symfony\Component\Templating\EngineInterface as MockOfTemplateEngine;
 
+/**
+ * Class ComingSoon
+ *
+ * @package Norsys\SecurityBundle\Tests\Units\Action
+ */
 class ComingSoon extends Test
 {
+    /**
+     * TestOnComingSoonIsEnabled
+     */
     public function testOnComingSoonIsEnabled()
     {
         $this
@@ -27,6 +35,9 @@ class ComingSoon extends Test
                             ->once();
     }
 
+    /**
+     * TestOnComingSoonIsDisabled
+     */
     public function testOnComingSoonIsDisabled()
     {
         $this
@@ -38,8 +49,9 @@ class ComingSoon extends Test
                 $this->newTestedInstance($templateEngine, $comingSoonEnabled, $comingSoonTemplate)
             )
             ->exception(
-                function() {
+                function () {
                     $this->testedInstance->__invoke();
-                })->isInstanceOf(NotFoundHttpException::class);
+                }
+            )->isInstanceOf(NotFoundHttpException::class);
     }
 }

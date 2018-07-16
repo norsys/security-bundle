@@ -8,10 +8,15 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 
 /**
- * ProxyListener
+ * Class ProxyListener
+ *
+ * @package Norsys\SecurityBundle\Tests\Units\EventListener
  */
 class ProxyListener extends Test
 {
+    /**
+     * TestOnKernelRequestDisabled
+     */
     public function testOnKernelRequestDisabled()
     {
         $this
@@ -24,6 +29,9 @@ class ProxyListener extends Test
             ->mock($event)->wasNotCalled();
     }
 
+    /**
+     * TestOnKernelRequest
+     */
     public function testOnKernelRequest()
     {
         $this
@@ -37,7 +45,6 @@ class ProxyListener extends Test
             ->if($this->testedInstance->onKernelRequest($event))
             ->then()
             ->array($request->getTrustedProxies())->isEqualTo(['192.168.0.1', '127.0.0.1'])
-            ->integer($request->getTrustedHeaderSet())->isEqualTo(0b11110)
-        ;
+            ->integer($request->getTrustedHeaderSet())->isEqualTo(0b11110);
     }
 }
