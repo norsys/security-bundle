@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Norsys\SecurityBundle\Tests\Units\Helpers;
 
@@ -8,6 +8,12 @@ use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 
 trait RequestHelper
 {
+    /**
+     * @param Request $request
+     * @param boolean $isMasterRequest
+     *
+     * @return mixed
+     */
     protected function createMockGetResponseEvent(Request $request, bool $isMasterRequest = false)
     {
         $event = $this->newMockInstance(GetResponseEvent::class);
@@ -18,6 +24,14 @@ trait RequestHelper
         return $event;
     }
 
+    /**
+     * @param string|null $method
+     * @param string|null $scheme
+     * @param string|null $host
+     * @param string|null $path
+     *
+     * @return mixed
+     */
     protected function createMockRequest(
         string $method = null,
         string $scheme = null,

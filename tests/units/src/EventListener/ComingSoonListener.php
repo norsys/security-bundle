@@ -10,10 +10,18 @@ use mock\Symfony\Bundle\FrameworkBundle\Routing\Router as MockOfRouter;
 use mock\Symfony\Component\HttpFoundation\Request as MockOfRequest;
 use Norsys\SecurityBundle\EventListener\ComingSoonListener as BaseClass;
 
+/**
+ * Class ComingSoonListener
+ *
+ * @package Norsys\SecurityBundle\Tests\Units\EventListener
+ */
 class ComingSoonListener extends Test
 {
     use RequestHelper;
 
+    /**
+     * TestOnComingSoonNotEnabledAndOnMasterRequest
+     */
     public function testOnComingSoonNotEnabledAndOnMasterRequest()
     {
         $this
@@ -33,6 +41,9 @@ class ComingSoonListener extends Test
                         ->never;
     }
 
+    /**
+     * TestOnComingSoonRouteName
+     */
     public function testOnComingSoonRouteName()
     {
         $this
@@ -53,6 +64,9 @@ class ComingSoonListener extends Test
                         ->never;
     }
 
+    /**
+     * TestOnIpIsAllowed
+     */
     public function testOnIpIsAllowed()
     {
         $this
@@ -73,6 +87,9 @@ class ComingSoonListener extends Test
                         ->never;
     }
 
+    /**
+     * TestOnNoRulesFoundForRedirection
+     */
     public function testOnNoRulesFoundForRedirection()
     {
         $this
@@ -86,8 +103,7 @@ class ComingSoonListener extends Test
                 $request = new MockOfRequest,
                 $statusCode = 302,
                 $event = $this->createMockGetResponseEvent($request, true),
-                $this->calling($event)->setResponse = function($response) use ($statusCode, $url) {
-                    /** @var RedirectResponse $response */
+                $this->calling($event)->setResponse = function ($response) use ($statusCode, $url) {
                     $this
                         ->object($response)
                             ->isInstanceOf(RedirectResponse::class)

@@ -5,6 +5,11 @@ namespace AppBundle\Tests\Units;
 use mageekguy\atoum;
 use mageekguy\atoum\mock;
 
+/**
+ * Class Test
+ *
+ * @package AppBundle\Tests\Units
+ */
 class Test extends atoum
 {
     public function beforeTestMethod($method)
@@ -13,8 +18,7 @@ class Test extends atoum
 
         $this->mockGenerator
             ->allIsInterface()
-            ->eachInstanceIsUnique()
-        ;
+            ->eachInstanceIsUnique();
 
         return parent::beforeTestMethod($method);
     }

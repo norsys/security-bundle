@@ -63,7 +63,8 @@ class Configuration implements ConfigurationInterface
                                 ->ifTrue(
                                     function (string $header) {
                                         if (preg_match('/^HEADER_FORWARDED$|^HEADER_X_[\w]+$/', $header) === 0
-                                            || defined(Request::class . '::' . $header) === false) {
+                                            || defined(Request::class . '::' . $header) === false
+                                        ) {
                                             return true;
                                         }
                                     }

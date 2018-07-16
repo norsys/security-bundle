@@ -9,10 +9,18 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use mock\Symfony\Component\HttpKernel\Event\GetResponseEvent as MockOfEvent;
 use mock\Symfony\Component\HttpFoundation\Request as MockOfRequest;
 
+/**
+ * Class HttpsRedirectListener
+ *
+ * @package Norsys\SecurityBundle\Tests\Units\EventListener
+ */
 class HttpsRedirectListener extends Test
 {
     use RequestHelper;
 
+    /**
+     * TestOnRedirectIsDisabledAndOnMasterRequest
+     */
     public function testOnRedirectIsDisabledAndOnMasterRequest()
     {
         $this
@@ -29,6 +37,9 @@ class HttpsRedirectListener extends Test
                         ->never;
     }
 
+    /**
+     * TestRedirectionWithHttpProxyEnabled
+     */
     public function testRedirectionWithHttpProxyEnabled()
     {
         $this
@@ -38,8 +49,7 @@ class HttpsRedirectListener extends Test
                 $event = new MockOfEvent,
                 $statusCode = 301,
                 $url = 'https://hostinfo',
-                $this->calling($event)->setResponse = function($response) use ($statusCode, $url) {
-                    /** @var RedirectResponse $response */
+                $this->calling($event)->setResponse = function ($response) use ($statusCode, $url) {
                     $this
                         ->object($response)
                             ->isInstanceOf(RedirectResponse::class)
