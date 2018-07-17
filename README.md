@@ -1,4 +1,4 @@
-# Norsys security bundle
+# Security bundle
 
 [![Package version](https://img.shields.io/packagist/v/norsys/security-bundle.svg?style=flat-square)](https://packagist.org/packages/norsys/security-bundle)
 [![Total Downloads](https://img.shields.io/packagist/dt/norsys/security-bundle.svg?style=flat-square)](https://packagist.org/packages/norsys/security-bundle)
@@ -6,6 +6,8 @@
 [![Scrutinizer Coverage](https://img.shields.io/scrutinizer/coverage/g/norsys/security-bundle.svg?style=flat-square)](https://scrutinizer-ci.com/g/norsys/security-bundle/?branch=master)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/norsys/security-bundle.svg?style=flat-square)](https://scrutinizer-ci.com/g/norsys/security-bundle/?branch=master)
 [![License](https://img.shields.io/packagist/l/norsys/security-bundle.svg?style=flat-square)](https://packagist.org/packages/norsys/security-bundle)
+
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/1849fe8f-e14c-424c-bc3c-f96ad2a7650f/big.png)](https://insight.sensiolabs.com/projects/1849fe8f-e14c-424c-bc3c-f96ad2a7650f)
 
 Bundle that provides security tools.
 
