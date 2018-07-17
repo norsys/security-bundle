@@ -1,7 +1,7 @@
 {
     "name": "norsys/security-bundle",
     "description": "Bundle that provides security tools",
-    "license": "proprietary",
+    "license": "MIT",
     "type": "symfony-bundle",
     "authors": [
         {
