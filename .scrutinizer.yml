@@ -1,28 +1,3 @@
-build:
-    nodes:
-        analysis:
-            project_setup:
-                override:
-                    - 'true'
-            tests:
-                override:
-                    - php-scrutinizer-run
-                    -
-                        command: phpcs-run
-                        use_website_config: true
-                    - js-scrutinizer-run
-        tests: true
-
-checks:
-    php: true
-    javascript: true
-    
-coding_style:
-    php:
-        spaces:
-            around_operators:
-                concatenation: true
-
 filter:
     excluded_paths:
         - "tests/*"
